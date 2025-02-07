@@ -8,7 +8,7 @@ import Search from './Search';
 
 function App() {
   const [items, setItems] = useState(JSON.parse
-    (localStorage.getItem('todo')));
+    (localStorage.getItem('todo')) || []);
 
   const [newItem, setNewItem] = useState('')
   const [search, setSearch] = useState('')
@@ -28,7 +28,7 @@ function App() {
     localStorage.setItem("todo", JSON.stringify(listitems));
   }
   const handleDelete = (id) => {
-    const listitems = items.filter((item) => item.id !== id);
+    const listitems = items.filter(item => item.id !== id);
     setItems(listitems);
     localStorage.setItem("todo", JSON.stringify(listitems));
   }
@@ -40,7 +40,6 @@ function App() {
     addItem(newItem)
     setNewItem('')
   }
-
   
   
   return (

@@ -92,7 +92,7 @@ ul li::before {
   outline: none;
 }
 .addForm,
-.searchForm {
+.searchForm { 
   display: flex;
   justify-content: center;
   align-items: center;
